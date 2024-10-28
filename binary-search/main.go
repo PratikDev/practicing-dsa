@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int{7, 11, 15, 23, 29, 31, 45, 55}
-	target := 55
+	arr := []int{5, 7, 7, 7, 7, 8, 8, 10}
+	target := 7
 
 	index := binarySearchWithRecursion(arr, target, 0, len(arr)-1)
 	fmt.Println("Index With Recursion:", index)

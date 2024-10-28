@@ -5,7 +5,7 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int{2, 3, 5, 9, 7, 1}
+	arr := []int{2, 3, 5, 9, 7, 0}
 
 	result := peakIndexInMountainArray(arr)
 	fmt.Println("Result:", result)
@@ -18,14 +18,17 @@ func peakIndexInMountainArray(arr []int) int {
 	for start <= end {
 		mid := (start + end) / 2
 
+		leftSmall := arr[mid] > arr[mid-1]
+		rightSmall := arr[mid] > arr[mid+1]
+
 		// if mid is the peak
-		if (arr[mid] > arr[mid-1]) && (arr[mid] > arr[mid+1]) {
+		if leftSmall && rightSmall {
 			return arr[mid]
 		}
 
-		if arr[mid] > arr[mid-1] {
-			start = mid
-		} else if arr[mid] > arr[mid+1] {
+		if leftSmall {
+			start = mid + 1
+		} else if rightSmall {
 			end = mid
 		}
 	}

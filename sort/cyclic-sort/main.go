@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int{3, 4, 3, 5, 2}
+	arr := []int{1, 2}
 	cyclicSort(arr)
 	fmt.Println("Result:", arr)
 }
